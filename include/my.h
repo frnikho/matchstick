@@ -51,6 +51,7 @@ char *my_strstr(char *str, char const *to_find);
 char *my_strupcase(char *str);
 void my_swap(int *a, int *b);
 char *my_strdup(char const *str);
+void my_strerr(char *str);
 
 int my_getnbr_index(char const *str, int start_index);
 

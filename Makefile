@@ -5,11 +5,16 @@ SRCPATH		=	src
 TESTPATH	=	tests
 MAINPATH	=	src
 
-SRC 		=
+SRC 		=	$(SRCPATH)/matchstick/board.c			\
+				$(SRCPATH)/matchstick/match.c			\
+				$(SRCPATH)/matchstick/matchstick.c		\
+				$(SRCPATH)/input/read_input.c			\
+
 
 MAIN		=	$(MAINPATH)/main.c
 
-TESTS		=	$(TESTPATH)/test_matchstick.c
+TESTS		=	$(TESTPATH)/test_matchstick.c			\
+				$(TESTPATH)/test_match.c
 
 LIB			=	-L lib -lmy
 
