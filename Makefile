@@ -9,6 +9,7 @@ SRC 		=	$(SRCPATH)/matchstick/board.c			\
 				$(SRCPATH)/matchstick/match.c			\
 				$(SRCPATH)/matchstick/matchstick.c		\
 				$(SRCPATH)/input/read_input.c			\
+				$(SRCPATH)/ia/ia.c
 
 
 MAIN		=	$(MAINPATH)/main.c

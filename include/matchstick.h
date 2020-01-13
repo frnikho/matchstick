@@ -11,6 +11,7 @@
 #include "my.h"
 #include <stdlib.h>
 #include <unistd.h>
+#include <time.h>
 
 #define READ_SIZE 1024
 
@@ -22,7 +23,7 @@ void display_board(char **board);
 
 char *read_input(void);
 int handle_user_input(char **board, int line);
-int handle_ia_input(char **board, int line);
+void handle_ia_input(char **board, int max_matches);
 
 int get_matches_line(char **board, int line);
 int get_all_matches(char **board);

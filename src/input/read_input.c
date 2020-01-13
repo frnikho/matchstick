@@ -16,7 +16,7 @@ char *read_input(void)
     return (buffer);
 }
 
-int get_input_line(int line)
+int get_input_line(char **board, int line)
 {
     int good_line = 0;
     while (!good_line) {
@@ -53,18 +53,11 @@ int handle_user_input(char **board, int line)
 {
     my_putchar('\n');
     my_putstr("Your turn:\n");
-    int sl = get_input_line(line);
+    int sl = get_input_line(board, line);
     int sm = get_input_matches(line);
     while (remove_match(board, sl, sm) == -1) {
         my_putstr("Error: not enough matches on this line\n");
         sm = get_input_matches(line);
     }
     my_printf("Player removed %d match(es) from line %d\n", sm, sl);
-}
-
-int handle_ia_input(char **board, int line)
-{
-    my_putchar('\n');
-    my_putstr("AI's turn...\n");
-    my_putstr("AI removed 2 match(es) from line 3\n");
 }

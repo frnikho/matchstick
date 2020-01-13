@@ -21,5 +21,6 @@ int main(int argc, char **argv)
         my_strerr("!\nUSAGE:\n./matchstick line maxmatches\n");
         return (84);
     }
+    srandom(time(NULL));
     return matchstick(line, max_matches);
 }
