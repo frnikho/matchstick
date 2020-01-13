@@ -30,7 +30,7 @@ TFLAGS		=	-lcriterion
 all:			$(NAME)
 $(NAME):		$(OBJ) $(OBJMAIN)
 				make -C lib/
-				gcc -o $(NAME) $(OBJMAIN) $(OBJ) $(CFLAGS)
+				$(CC) -o $(NAME) $(OBJMAIN) $(OBJ) $(CFLAGS)
 clean:
 				rm -rf $(OBJ) $(OBJTESTS)
 fclean:			clean
