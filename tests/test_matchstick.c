@@ -43,6 +43,12 @@ Test(get_line_matches, normal)
     char *line = get_line_matches(matches, space);
 }
 
+Test(create_board, size_1)
+{
+    char **board = create_board(1);
+    cr_expect_null(board);
+}
+
 Test(create_board, size_2)
 {
     char **board = create_board(2);

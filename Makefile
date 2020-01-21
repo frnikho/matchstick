@@ -9,6 +9,7 @@ SRC 		=	$(SRCPATH)/matchstick/board.c			\
 				$(SRCPATH)/matchstick/match.c			\
 				$(SRCPATH)/matchstick/matchstick.c		\
 				$(SRCPATH)/input/read_input.c			\
+				$(SRCPATH)/input/game_input.c			\
 				$(SRCPATH)/ia/ia.c
 
 
@@ -24,7 +25,7 @@ OBJMAIN		=	$(MAIN:%.c=%.o)
 OBJTESTS	=	$(TESTS:%.c=%.o)
 
 INCLUDE		=	-I include/
-CFLAGS		=	$(INCLUDE) $(LIB)
+CFLAGS		=	$(INCLUDE) $(LIB) --coverage
 TFLAGS		=	-lcriterion
 
 all:			$(NAME)

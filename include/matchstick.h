@@ -31,4 +31,6 @@ int remove_match(char **board, int line, int matches);
 
 int matchstick(int line, int max_matches);
 
+int game_input(char **board, int lines, int max_lines);
+
 #endif

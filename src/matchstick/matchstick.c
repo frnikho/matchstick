@@ -13,7 +13,8 @@ int matchstick(int line, int max_matches)
     char **board = create_board(line);
     while (game) {
         display_board(board);
-        handle_user_input(board, line);
+        if (game_input(board, line, max_matches) == -1)
+            break;
         display_board(board);
         handle_ia_input(board, max_matches);
         if (get_all_matches(board) < 1) {

@@ -5,6 +5,7 @@
 ** read_input function
 */
 
+#include <stdio.h>
 #include "matchstick.h"
 #include "myprintf.h"
 
@@ -12,7 +13,12 @@ char *read_input(void)
 {
     char *buffer = malloc(READ_SIZE);
     int rd = 0;
-    while (rd = read(0, buffer, READ_SIZE) < 0) {}
+    while (rd = read(0, buffer, READ_SIZE) < 0) {
+
+    }
+    if (buffer == 0) {
+        return (0);
+    }
     return (buffer);
 }
 
@@ -21,7 +27,10 @@ int get_input_line(char **board, int line)
     int good_line = 0;
     while (!good_line) {
         my_putstr("Line: ");
-        int input = my_getnbr(read_input());
+        char *read = read_input();
+        if (read && read[0] == 0)
+            return (-1);
+        int input = my_getnbr(read);
         if (input < 0) {
             my_putstr("Error: invalid input (positive number expected)\n");
             continue;
@@ -54,7 +63,11 @@ int handle_user_input(char **board, int line)
     my_putchar('\n');
     my_putstr("Your turn:\n");
     int sl = get_input_line(board, line);
+    if (sl == -1)
+        return (-1);
     int sm = get_input_matches(line);
+    if (sm == -1)
+        return (-1);
     while (remove_match(board, sl, sm) == -1) {
         my_putstr("Error: not enough matches on this line\n");
         sm = get_input_matches(line);
