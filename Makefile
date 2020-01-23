@@ -25,7 +25,7 @@ OBJMAIN		=	$(MAIN:%.c=%.o)
 OBJTESTS	=	$(TESTS:%.c=%.o)
 
 INCLUDE		=	-I include/
-CFLAGS		=	$(INCLUDE) $(LIB) --coverage
+CFLAGS		=	$(INCLUDE) $(LIB)
 TFLAGS		=	-lcriterion
 
 all:			$(NAME)
