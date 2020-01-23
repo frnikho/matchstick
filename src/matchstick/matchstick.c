@@ -22,4 +22,5 @@ int matchstick(int line, int max_matches)
             return (0);
         }
     }
+    return (0);
 }
