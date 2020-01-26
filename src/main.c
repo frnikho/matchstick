@@ -21,6 +21,12 @@ int main(int argc, char **argv)
         my_strerr("!\nUSAGE:\n./matchstick line maxmatches\n");
         return (84);
     }
-    srandom(time(NULL));
-    return matchstick(line, max_matches);
+    int result = matchstick(line, max_matches);
+    if (result == 2) {
+        my_putstr("You lost, too bad...\n");
+        return (2);
+    } else if (result == 1) {
+        my_putstr("I lost... snif... but I'll get you next time!!\n");
+        return (1);
+    }
 }

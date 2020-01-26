@@ -20,17 +20,12 @@ char *get_line_matches(int matches, int space);
 int get_last_line_matches(int line);
 char **create_board(int line);
 void display_board(char **board);
-
 char *read_input(void);
-int handle_user_input(char **board, int line);
-void handle_ia_input(char **board, int max_matches);
-
+void handle_ia_input(char **board, int max_lines, int max_matches);
 int get_matches_line(char **board, int line);
 int get_all_matches(char **board);
 int remove_match(char **board, int line, int matches);
-
 int matchstick(int line, int max_matches);
-
 int game_input(char **board, int lines, int max_lines);
 
 #endif

@@ -72,6 +72,7 @@ int get_match_input(char **board, int current_line, int max_matches)
 int game_input(char **board, int lines, int max_lines)
 {
     my_putchar('\n');
+    my_putstr("Your turn:\n");
     int cl = 0;
     int cm = 0;
     while (1) {
