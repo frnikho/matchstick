@@ -11,11 +11,10 @@
 
 char *read_input(void)
 {
-    char *buffer = malloc(READ_SIZE);
-    int rd = 0;
-    while (rd = read(0, buffer, READ_SIZE) < 0) {
+    char *buffer = malloc(1024);
+    size_t size = 0;
 
-    }
+    getline(&buffer, &size, stdin);
     if (buffer == 0) {
         return (0);
     }

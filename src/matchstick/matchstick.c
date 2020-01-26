@@ -10,7 +10,6 @@
 int check_win(char **board, int is_player)
 {
     if (get_all_matches(board) < 1) {
-        display_board(board);
         if (is_player)
             return (1);
         else
@@ -27,11 +26,15 @@ int matchstick(int line, int max_matches)
         display_board(board);
         if (game_input(board, line, max_matches) == -1)
             return (0);
-        if (check_win(board, 1) == 1)
+        if (check_win(board, 1) == 1) {
+            display_board(board);
             return (2);
+        }
         display_board(board);
         handle_ia_input(board, line, max_matches);
-        if (check_win(board, 0) == 2)
+        if (check_win(board, 0) == 2) {
+            display_board(board);
             return (1);
+        }
     }
 }

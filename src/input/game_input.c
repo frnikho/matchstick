@@ -41,7 +41,11 @@ int get_line_input(char **board, int lines, int max_matches)
         if (read && read[0] == 0)
             return (-1);
         current_line = my_getnbr(read);
-        if (current_line == 0 || current_line > lines) {
+        if (current_line == 0) {
+            my_putstr("Error: invalid input (positive number expected)\n");
+            continue;
+        }
+        if (current_line > lines) {
             my_putstr("Error: this line is out of range\n");
             continue;
         }

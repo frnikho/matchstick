@@ -16,9 +16,9 @@ int main(int argc, char **argv)
     }
     int line = my_getnbr(argv[1]);
     int max_matches = my_getnbr(argv[2]);
-    if (line < 2 || line > 100 || max_matches <= 0 || max_matches > 197) {
-        my_strerr("Invalid line size (line > 2) or max matches (matches > 0)");
-        my_strerr("!\nUSAGE:\n./matchstick line maxmatches\n");
+    if (line < 2 || line > 99 || max_matches <= 0) {
+        my_strerr("Invalid line size or matches (1 < line < 100)\n");
+        my_strerr("USAGE:\n./matchstick line maxmatches\n");
         return (84);
     }
     int result = matchstick(line, max_matches);
