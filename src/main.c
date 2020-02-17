@@ -16,7 +16,7 @@ int main(int argc, char **argv)
     }
     int line = my_getnbr(argv[1]);
     int max_matches = my_getnbr(argv[2]);
-    if (line < 2 || line > 99 || max_matches <= 0) {
+    if (line < 2 || line > 99ch || max_matches <= 0) {
         my_strerr("Invalid line size or matches (1 < line < 100)\n");
         my_strerr("USAGE:\n./matchstick line maxmatches\n");
         return (84);
